@@ -1,5 +1,6 @@
-public class Main {
+public class Main extends Tui {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Tui tui = new Tui();
+        tui.tuiGraphics(5, 5);
     }
 }
