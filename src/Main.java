@@ -1,6 +1,14 @@
-public class Main extends Tui {
+public class Main{
     public static void main(String[] args) {
-        Tui tui = new Tui();
-        tui.tuiConfig();
+
+        System.out.print("╔");
+
+        for(int i = 0; i < 30; i++) {
+            System.out.print("═");
+        }
+        System.out.print("╗");
+        System.out.print("\n║ Benvingut a tic tac toe!\n");
+
+
     }
 }
