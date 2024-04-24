@@ -2,53 +2,21 @@ import java.util.Scanner;
 
 public class TUI {
 
-    private int menu;
-    private boolean sortir;
+    private Scanner sc = new Scanner(System.in);
 
-    public int getMenu() {
-        return menu;
+    public int mostrarMenu() {
+        return 0;
     }
 
-    public boolean isSortir() {
-        return sortir;
+    public void mostrarTaulell(char[] taulell, short torn) {
+        return;
     }
 
-    Scanner sc = new Scanner(System.in);
-
-    public TUI(int menu, boolean sortir) {
-        this.menu = sc.nextInt();
-        this.sortir = sc.nextBoolean();
+    public short[] recollirJugada() {
+        return new short[1];
     }
 
-    protected void menuM(int menu, boolean sortir) {
-        while (sortir) {
-            switch (menu) {
-                case 1:
-                    sortir = false;
-                    novaPartida();
-                    break;
-                case 2:
-                    sortir = false;
-                    carregaPartida();
-                    break;
-                case 3:
-                    sortir = false;
-                    configuracio();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    protected  void novaPartida () {
-        System.out.println();
-    }
-    protected void carregaPartida () {
-        System.out.println();
-    }
-
-    protected  void configuracio () {
-        System.out.println();
+    public void fiDePartida(short guanyador) {
+        return;
     }
 }
