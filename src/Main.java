@@ -1,13 +1,6 @@
 public class Main extends TUI {
 
-    public Main(int menu, boolean sortir) {
-        super(menu, sortir);
-    }
-
     public static void main(String[] args) {
-        int menu = 4;
-        boolean sortir = true;
-
         System.out.print("╔══════════════════════════╗\n" +
                          "║ Benvingut a tic tac toe! ║\n" +
                          "║------------------------- ║\n" +
@@ -21,6 +14,10 @@ public class Main extends TUI {
                          "╚══════════════════════════╝");
 
         System.out.print("\nSelecciona l'opció que vols: ");
-        TUI tui = new TUI(menu, sortir);
     }
+
+    private static void novaPartida() {}
+    private static void carregarPartida() {}
+    private static void config() {}
+    private static void sortir() {}
 }
