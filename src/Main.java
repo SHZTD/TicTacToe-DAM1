@@ -1,7 +1,12 @@
-import java.util.Scanner;
+public class Main extends TUI {
 
-public class Main{
+    public Main(int menu, boolean sortir) {
+        super(menu, sortir);
+    }
+
     public static void main(String[] args) {
+        int menu = 4;
+        boolean sortir = true;
 
         System.out.print("╔══════════════════════════╗\n" +
                          "║ Benvingut a tic tac toe! ║\n" +
@@ -15,8 +20,7 @@ public class Main{
                          "║ 4. Sortir                ║\n" +
                          "╚══════════════════════════╝");
 
-        Scanner sc = new Scanner(System.in);
         System.out.print("\nSelecciona l'opció que vols: ");
-        int num= sc.nextInt();
+        TUI tui = new TUI(menu, sortir);
     }
 }
