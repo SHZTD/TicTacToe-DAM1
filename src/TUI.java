@@ -1,14 +1,26 @@
+import java.util.Scanner;
+
 public class TUI {
-    int menu;
-    boolean sortir;
+
+    private int menu;
+    private boolean sortir;
+
+    public int getMenu() {
+        return menu;
+    }
+
+    public boolean isSortir() {
+        return sortir;
+    }
+
+    Scanner sc = new Scanner(System.in);
 
     public TUI(int menu, boolean sortir) {
-        this.menu = menu;
-        this.sortir = sortir;
+        this.menu = sc.nextInt();
+        this.sortir = sc.nextBoolean();
     }
 
     protected void menuM(int menu, boolean sortir) {
-
         while (sortir) {
             switch (menu) {
                 case 1:
@@ -23,13 +35,12 @@ public class TUI {
                     sortir = false;
                     configuracio();
                     break;
-                case 4:
-                    sortir= true;
+                default:
                     break;
             }
         }
-
     }
+
     protected  void novaPartida () {
         System.out.println();
     }
