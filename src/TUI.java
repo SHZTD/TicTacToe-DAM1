@@ -1,6 +1,5 @@
-public class TUI {
 
-    private Scanner sc = new Scanner(System.in);
+public class TUI {
 
     public int mostrarMenu() {
         return 0;

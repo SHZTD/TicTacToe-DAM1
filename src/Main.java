@@ -20,4 +20,5 @@ public class Main extends TUI {
     private static void carregarPartida() {}
     private static void config() {}
     private static void sortir() {}
+
 }
