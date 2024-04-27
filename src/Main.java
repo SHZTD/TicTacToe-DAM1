@@ -1,6 +1,8 @@
-public class Main {
+import java.util.Scanner;
 
+public class Main{
     public static void main(String[] args) {
+
         System.out.print("╔══════════════════════════╗\n" +
                          "║ Benvingut a tic tac toe! ║\n" +
                          "║------------------------- ║\n" +
@@ -13,12 +15,8 @@ public class Main {
                          "║ 4. Sortir                ║\n" +
                          "╚══════════════════════════╝");
 
+        Scanner sc = new Scanner(System.in);
         System.out.print("\nSelecciona l'opció que vols: ");
+        int num= sc.nextInt();
     }
-
-    private static void novaPartida() {}
-    private static void carregarPartida() {}
-    private static void config() {}
-    private static void sortir() {}
-
 }
