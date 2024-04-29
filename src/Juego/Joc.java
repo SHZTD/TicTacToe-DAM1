@@ -19,12 +19,13 @@ public class Joc {
     public void novaPartida(){
         //Esto es para inicializar el tablero como un 3x3
         taulell= new char[3][3];
-        //Esto espara rellenarlo
+        //Esto es para rellenarlo
         for (int i=0; i < 3; i++){
             for (int j=0; j < 3; j++){
-                taulell[i][j]= ' ';
+                taulell[i][j]= '#';
             }
         }
+
         //Aqui lo que hacemos es poner el turno como 0 para que se reinicie al comenzar una partida
         torn=0;
     }
