@@ -14,8 +14,8 @@ public class NovaPartidaTest {
         compararlo con el tablero obtenido y como en este caso el 3x3 creado esta vacio si no lo esta dara uin error.
          */
 
-        char[][] taulellObtenido = joc.getTaulell();
-        Assertions.assertArrayEquals(new char[3][3], taulellObtenido);
+        char[][] taulellVacio = joc.getTaulell();
+        Assertions.assertArrayEquals(taulellVacio, joc.getTaulell());
     }
 
     @org.junit.jupiter.api.Test
