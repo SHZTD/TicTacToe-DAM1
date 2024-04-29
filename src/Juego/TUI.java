@@ -1,3 +1,5 @@
+package Juego;
+
 import java.util.Scanner;
 
 public class TUI {
