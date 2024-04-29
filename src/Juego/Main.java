@@ -19,6 +19,17 @@ public class Main{
 
         Scanner sc = new Scanner(System.in);
         System.out.print("\nSelecciona l'opció que vols: ");
-        int num= sc.nextInt();
+        int num = sc.nextInt();
+        Joc joc = new Joc();
+        joc.novaPartida();
+        joc.getTaulell();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                char c = joc.getTaulell()[i][j];
+                System.out.print(c);
+            }
+            System.out.print("\n");
+        }
+
     }
 }
