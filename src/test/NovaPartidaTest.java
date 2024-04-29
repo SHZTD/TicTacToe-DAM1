@@ -7,7 +7,7 @@ import Juego.Joc;
 public class NovaPartidaTest {
 
     @org.junit.jupiter.api.Test
-    void testJoc() {
+    void testTaulell() {
         Joc joc = new Joc();
 
         /*Lo que hemos hemos hecho a sido decir que el tablero que queremos obetener en este caso es un 3x3,
