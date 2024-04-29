@@ -2,6 +2,7 @@ package test;
 
 import Juego.Joc;
 import org.junit.jupiter.api.Assertions;
+
 public class JocTest {
     @org.junit.jupiter.api.Test
     void testJugar() {

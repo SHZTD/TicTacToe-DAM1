@@ -30,9 +30,15 @@ public class Joc {
         torn=0;
     }
 
-
+    // empezamos a escribir los chars en nuestro tablero
     public void jugar(short fila, String columna){
-        throw new NotImplementedException();
+        int j = 0;
+        switch (j) {
+            case 0:
+                taulell[fila][0] = 'o';
+            case 1:
+                taulell[fila][0] = 'x';
+        }
     }
 
     public boolean jugadaGuanyadora(short fila, String columna){
