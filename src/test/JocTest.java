@@ -16,6 +16,7 @@ public class JocTest {
                 {'#', '#', '#'},
                 {'#', '#', '#'}
         };
+
         Assertions.assertArrayEquals(p0, testJoc);
     }
 }
