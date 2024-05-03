@@ -8,15 +8,14 @@ public class JocTest {
     void testJugar() {
         Joc joc = new Joc();
         joc.novaPartida();
-        char[][] testJoc = joc.getTaulell();
-        testJoc[0][0] = 'o';
+        joc.jugar((short)0, (short)0);
 
         char[][] p0 = {
-                {'o', '#', '#'},
+                {'x', '#', '#'},
                 {'#', '#', '#'},
                 {'#', '#', '#'}
         };
 
-        Assertions.assertArrayEquals(p0, testJoc);
+        Assertions.assertArrayEquals(p0, joc.getTaulell());
     }
 }

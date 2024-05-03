@@ -31,13 +31,16 @@ public class Joc {
     }
 
     // empezamos a escribir los chars en nuestro tablero
-    public void jugar(short fila, String columna){
-        int j = 0;
-        switch (j) {
+    public void jugar(short fila, short columna){
+        switch (torn) {
             case 0:
-                taulell[fila][0] = 'o';
+                taulell[fila][columna] = 'x';
+                torn = 1;
+                break;
             case 1:
-                taulell[fila][0] = 'x';
+                taulell[fila][columna] = 'o';
+                torn = 0;
+                break;
         }
     }
 
