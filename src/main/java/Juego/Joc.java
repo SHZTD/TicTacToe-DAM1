@@ -44,6 +44,6 @@ public class Joc {
     }
 
     public boolean jugadaGuanyadora(short fila, short columna){
-        return false;
+
     }
 }
