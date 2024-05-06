@@ -23,13 +23,5 @@ public class Main{
         Joc joc = new Joc();
         joc.novaPartida();
         joc.getTaulell();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                char c = joc.getTaulell()[i][j];
-                System.out.print(c);
-            }
-            System.out.print("\n");
-        }
-
     }
 }
