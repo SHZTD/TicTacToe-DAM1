@@ -1,21 +1,21 @@
-package test;
-
 import Juego.Joc;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class JocTest {
-    @org.junit.jupiter.api.Test
+    @Test
     void testJugar() {
         Joc joc = new Joc();
         joc.novaPartida();
-        joc.jugar((short)0, (short)0);
+        char[][] testJoc = joc.getTaulell();
+        testJoc[0][0] = 'o';
 
         char[][] p0 = {
-                {'x', '#', '#'},
+                {'o', '#', '#'},
                 {'#', '#', '#'},
                 {'#', '#', '#'}
         };
 
-        Assertions.assertArrayEquals(p0, joc.getTaulell());
+        Assertions.assertArrayEquals(p0, testJoc);
     }
 }

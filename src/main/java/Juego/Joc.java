@@ -44,7 +44,7 @@ public class Joc {
         }
     }
 
-    public boolean jugadaGuanyadora(short fila, String columna){
+    public boolean jugadaGuanyadora(short fila, short columna){
         throw new NotImplementedException();
     }
 }

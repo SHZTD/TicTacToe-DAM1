@@ -1,12 +1,10 @@
-package test;
-
 import org.junit.jupiter.api.Assertions;
-
+import org.junit.jupiter.api.Test;
 import Juego.Joc;
 
 public class NovaPartidaTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testTaulell() {
         Joc joc = new Joc();
 
@@ -18,7 +16,7 @@ public class NovaPartidaTest {
         Assertions.assertArrayEquals(taulellVacio, joc.getTaulell());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testTurnoJuagador(){
         Joc joc = new Joc();
         short tornObtenido = 0;
