@@ -1,6 +1,5 @@
 package Juego;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Joc {
 
@@ -45,6 +44,6 @@ public class Joc {
     }
 
     public boolean jugadaGuanyadora(short fila, short columna){
-        throw new NotImplementedException();
+        return false;
     }
 }
