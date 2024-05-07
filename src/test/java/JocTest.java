@@ -1,6 +1,8 @@
 import Juego.Joc;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class JocTest {
 
@@ -117,9 +119,16 @@ public class JocTest {
         Assertions.assertEquals(tornObtenido, joc.getTorn());
     }
 
-    //Test metode jugadaGuanayadora
-    @Test
-    void testJugadaGuanyadora(){
+    //Test metode jugadaGuanayadora jugador 1
+    @ParameterizedTest
+    @CsvSource({"0,0","0,1","0,2","0,3","1,0","1,1","1,2","1,3","2,0","2,1","2,2","2,3","3,0","3,1","3,2","3,3"})
+    void testJugadaGuanyadora1(short fila, short columna){
+        Joc joc = new Joc();
+        Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
 
     }
+
+    //Test metode jugadaGuanayadora jugador 2
+
+
 }
