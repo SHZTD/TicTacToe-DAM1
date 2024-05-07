@@ -3,10 +3,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class JocTest {
+
+    // UNICAMENT PER 1 JUGADOR
     @Test
     void testJugar() {
         Joc joc = new Joc();
         joc.novaPartida();
+
         char[][] testJoc = joc.getTaulell();
         testJoc[0][0] = 'o';
 
@@ -18,6 +21,80 @@ public class JocTest {
 
         Assertions.assertArrayEquals(p0, testJoc);
     }
+
+    // COMPROBAR QUE ES PODEN POSAR
+    // A TOTES LES POSICIONS JUGADOR 1
+    // CAL REFACTORING, MASSA FORÇA BRUTA.
+    @Test
+    void testJugador1() {
+        // CAL REFACTORING, MASSA FORÇA BRUTA.
+        Joc joc = new Joc();
+        joc.novaPartida();
+
+        char[][] p0 = joc.getTaulell();
+        char[][] p1 = {
+                {'#', '#', '#'},
+                {'#', '#', '#'},
+                {'#', '#', '#'}
+        };
+
+        char j1 = 'o';
+
+        int valid = 0;
+        int expected = 9;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                p0[i][j] = j1;
+                p1[i][j] = j1;
+                if (p0[i][j] == j1 && p1[i][j] == j1) {
+                    valid++;
+                }
+            }
+        }
+
+        Assertions.assertEquals(expected, valid);
+    }
+
+    // COMPROBAR QUE ES PODEN POSAR
+    // A TOTES LES POSICIONS JUGADOR 2
+    // CAL REFACTORING, MASSA FORÇA BRUTA.
+    @Test
+    void testJugador2() {
+
+        Joc joc = new Joc();
+        joc.novaPartida();
+
+        //char[][] p0 = joc.getTaulell();
+        char[][] p0;
+        char[][] p1 = {
+                {'#', '#', '#'},
+                {'#', '#', '#'},
+                {'#', 'o', '#'}
+        };
+
+        p0 = p1;
+        char j2 = 'x';
+
+        int valid = 0;
+        int expected = 8;
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (p0[i][j] == 'o' && p1[i][j] == 'o') {
+                    j+=1;
+                }
+                p0[i][j] = j2;
+                p1[i][j] = j2;
+                if (p0[i][j] == j2 && p1[i][j] == j2) {
+                    valid++;
+                }
+            }
+        }
+
+        Assertions.assertEquals(expected, valid);
+    }
+
+
 
 //Test metode NovaPartida
     @Test
