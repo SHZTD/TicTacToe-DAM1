@@ -23,9 +23,10 @@ public class JocTest {
     @Test
     void testTaulell() {
         Joc joc = new Joc();
-
+        //llamo al taulell para poder obtener el tablero relleno que de # que en nuestro caso es lo vacio
+        joc.novaPartida();
         /*Lo que hemos hemos hecho a sido decir que el tablero que queremos obetener en este caso es un 3x3,
-        compararlo con el tablero obtenido y como en este caso el 3x3 creado esta vacio si no lo esta dara uin error.
+        compararlo con el tablero obtenido y como en este caso el 3x3 creado esta vacio si no lo esta dara un error.
          */
 
         char[][] taulellVacio = joc.getTaulell();
@@ -37,5 +38,11 @@ public class JocTest {
         Joc joc = new Joc();
         short tornObtenido = 0;
         Assertions.assertEquals(tornObtenido, joc.getTorn());
+    }
+
+    //Test metode jugadaGuanayadora
+    @Test
+    void testJugadaGuanyadora(){
+
     }
 }
