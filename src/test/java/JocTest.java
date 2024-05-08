@@ -66,7 +66,6 @@ public class JocTest {
         Joc joc = new Joc();
         joc.novaPartida();
 
-        //char[][] p0 = joc.getTaulell();
         char[][] p0;
         char[][] p1 = {
                 {'#', '#', '#'},
