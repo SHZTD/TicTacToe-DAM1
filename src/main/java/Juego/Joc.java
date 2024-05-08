@@ -41,6 +41,7 @@ public class Joc {
                 torn = 0;
                 break;
         }
+
     }
 
     public boolean jugadaGuanyadora(short fila, short columna){

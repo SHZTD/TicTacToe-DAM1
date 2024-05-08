@@ -98,7 +98,7 @@ public class JocTest {
 
 
 
-//Test metode NovaPartida
+    //Test metode NovaPartida
     @Test
     void testTaulell() {
         Joc joc = new Joc();
@@ -112,6 +112,8 @@ public class JocTest {
         Assertions.assertArrayEquals(taulellVacio, joc.getTaulell());
     }
 
+    //Prueba unitaria de si cuando empieza nueva partida es el turno del jugador 1 o 2
+
     @Test
     void testTurnoJuagador() {
         Joc joc = new Joc();
@@ -120,15 +122,31 @@ public class JocTest {
     }
 
     //Test metode jugadaGuanayadora jugador 1
+    //Test del metodo jugadaGuanayadora que lo que hace es que mira si la llamada del metodo da falso cuando el tablero esta vacio.
+
     @ParameterizedTest
-    @CsvSource({"0,0","0,1","0,2","0,3","1,0","1,1","1,2","1,3","2,0","2,1","2,2","2,3","3,0","3,1","3,2","3,3"})
+    @CsvSource({"0,0","0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
     void testJugadaGuanyadora1(short fila, short columna){
         Joc joc = new Joc();
+        joc.novaPartida();
         Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
+    }
 
+    //Test metode jugadaGuanyadora la cual mira si una casilla esta ocupada, es decir una unica casilla que la llamada de falsa
+
+    @ParameterizedTest
+    @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
+    void testJugadaGuanyadoraUnaCasella(short fila, short columna){
+        Joc joc = new Joc();
+        joc.novaPartida();
+        joc.jugar((short)0, (short)0);
+        Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
     }
 
     //Test metode jugadaGuanayadora jugador 2
+
+
+
 
 
 }
