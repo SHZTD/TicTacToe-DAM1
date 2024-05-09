@@ -6,6 +6,7 @@ public class Joc {
     private char[][] taulell;
 
     public char[][] getTaulell() {
+
         return taulell;
     }
 
@@ -19,22 +20,22 @@ public class Joc {
         return torn;
     }
 
-    public void novaPartida(){
+    public void novaPartida() {
         //Esto es para inicializar el tablero como un 3x3
-        taulell= new char[3][3];
+        taulell = new char[3][3];
         //Esto es para rellenarlo
-        for (int i=0; i < 3; i++){
-            for (int j=0; j < 3; j++){
-                taulell[i][j]= '#';
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                taulell[i][j] = '#';
             }
         }
 
         //Aqui lo que hacemos es poner el turno como 0 para que se reinicie al comenzar una partida
-        torn=0;
+        torn = 0;
     }
 
     // empezamos a escribir los chars en nuestro tablero
-    public void jugar(short fila, short columna){
+    public void jugar(short fila, short columna) {
         switch (torn) {
             case 0:
                 taulell[fila][columna] = 'x';
@@ -48,9 +49,27 @@ public class Joc {
 
     }
 
-    public boolean jugadaGuanyadora(short fila, short columna){
+    /*
+    jugadaGuanyadora: donada una fila i columna, simula si es tracta d’una jugada guanyadora;
+    en acabar, el taulell i el torn no queden alterats.
+     */
+    public boolean jugadaGuanyadora(short fila, short columna) {
+
+        int contador=0;
+
+        for(int i=0; i < 3; i++){
+            if (getTaulell()[0][i]=='o') {
+                contador++;
+            }
+        }
+        if (contador == 3){
+            return true;
+        }
+
+        for (int i=0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+            }
+        }
         return false;
     }
-
-
 }

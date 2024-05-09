@@ -111,7 +111,7 @@ public class JocTest {
         Assertions.assertArrayEquals(taulellVacio, joc.getTaulell());
     }
 
-    //Prueba unitaria de si cuando empieza nueva partida es el turno del jugador 1 o 2
+    //Prueba unitaria de si cuando empieza nueva partida es el turno del jugador 1
 
     @Test
     void testTurnoJuagador() {
@@ -126,8 +126,11 @@ public class JocTest {
     @ParameterizedTest
     @CsvSource({"0,0","0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
     void testJugadaGuanyadora1(short fila, short columna){
+        //setup
         Joc joc = new Joc();
         joc.novaPartida();
+
+        //ejecucion de prueba
         Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
     }
 
@@ -136,9 +139,12 @@ public class JocTest {
     @ParameterizedTest
     @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
     void testJugadaGuanyadoraUnaCasella(short fila, short columna){
+        //setup
         Joc joc = new Joc();
         joc.novaPartida();
         joc.jugar((short)0, (short)0);
+
+        //ejecucion de prueba
         Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
     }
 

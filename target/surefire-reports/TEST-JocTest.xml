@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.152" tests="30" errors="0" skipped="0" failures="8">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.179" tests="38" errors="0" skipped="0" failures="16">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/home/dam1/.jdks/corretto-21.0.3/lib"/>
-    <property name="sun.java.command" value="/home/dam1/IdeaProjects/TicTacToe-DAM1/target/surefire/surefirebooter7983730419576385733.jar /home/dam1/IdeaProjects/TicTacToe-DAM1/target/surefire 2024-05-09T17-10-59_717-jvmRun1 surefire2385211443921714542tmp surefire_03044228108783147359tmp"/>
+    <property name="sun.java.command" value="/home/dam1/IdeaProjects/TicTacToe-DAM1/target/surefire/surefirebooter897148388278250650.jar /home/dam1/IdeaProjects/TicTacToe-DAM1/target/surefire 2024-05-09T17-51-06_532-jvmRun1 surefire17200294531598172831tmp surefire_08375426777490290786tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/dam1/IdeaProjects/TicTacToe-DAM1/target/test-classes:/home/dam1/IdeaProjects/TicTacToe-DAM1/target/classes:/home/dam1/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/home/dam1/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/dam1/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:/home/dam1/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/dam1/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:/home/dam1/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/home/dam1/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.5.2/junit-jupiter-params-5.5.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/dam1/IdeaProjects/TicTacToe-DAM1/target/surefire/surefirebooter7983730419576385733.jar"/>
+    <property name="surefire.real.class.path" value="/home/dam1/IdeaProjects/TicTacToe-DAM1/target/surefire/surefirebooter897148388278250650.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.3+9-LTS"/>
     <property name="user.name" value="dam1"/>
@@ -55,66 +55,106 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testTaulell" classname="JocTest" time="0.02"/>
-  <testcase name="testJugadaGuanyadoraJ1{short, short}[1]" classname="JocTest" time="0.03">
+  <testcase name="testTaulell" classname="JocTest" time="0.028"/>
+  <testcase name="testJugadaGuanyadoraJ1{short, short}[1]" classname="JocTest" time="0.028">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
   <testcase name="testJugadaGuanyadoraJ1{short, short}[2]" classname="JocTest" time="0.001">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
   <testcase name="testJugadaGuanyadoraJ1{short, short}[3]" classname="JocTest" time="0.002">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
-  <testcase name="testJugadaGuanyadoraJ1{short, short}[4]" classname="JocTest" time="0.002">
+  <testcase name="testJugadaGuanyadoraJ1{short, short}[4]" classname="JocTest" time="0.001">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
   <testcase name="testJugadaGuanyadoraJ1{short, short}[5]" classname="JocTest" time="0.001">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
   <testcase name="testJugadaGuanyadoraJ1{short, short}[6]" classname="JocTest" time="0.001">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
-  <testcase name="testJugadaGuanyadoraJ1{short, short}[7]" classname="JocTest" time="0.001">
+  <testcase name="testJugadaGuanyadoraJ1{short, short}[7]" classname="JocTest" time="0.002">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
 ]]></failure>
   </testcase>
-  <testcase name="testJugadaGuanyadoraJ1{short, short}[8]" classname="JocTest" time="0.001">
+  <testcase name="testJugadaGuanyadoraJ1{short, short}[8]" classname="JocTest" time="0">
     <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:158)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[1]" classname="JocTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[2]" classname="JocTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[3]" classname="JocTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[4]" classname="JocTest" time="0.002">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[5]" classname="JocTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[6]" classname="JocTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[7]" classname="JocTest" time="0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
+]]></failure>
+  </testcase>
+  <testcase name="testJugadaGuanyadoraJ2{short, short}[8]" classname="JocTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ2(JocTest.java:169)
 ]]></failure>
   </testcase>
   <testcase name="testJugar" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[1]" classname="JocTest" time="0.001"/>
-  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[2]" classname="JocTest" time="0"/>
+  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[2]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[3]" classname="JocTest" time="0.001"/>
-  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[4]" classname="JocTest" time="0"/>
-  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[5]" classname="JocTest" time="0"/>
+  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[4]" classname="JocTest" time="0.001"/>
+  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[5]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[6]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[7]" classname="JocTest" time="0"/>
-  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[8]" classname="JocTest" time="0"/>
-  <testcase name="testJugador1" classname="JocTest" time="0.002"/>
-  <testcase name="testJugador2" classname="JocTest" time="0.001"/>
+  <testcase name="testJugadaGuanyadoraUnaCasella{short, short}[8]" classname="JocTest" time="0.001"/>
+  <testcase name="testJugador1" classname="JocTest" time="0.001"/>
+  <testcase name="testJugador2" classname="JocTest" time="0"/>
   <testcase name="testJugadaGuanyadora1{short, short}[1]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadora1{short, short}[2]" classname="JocTest" time="0"/>
-  <testcase name="testJugadaGuanyadora1{short, short}[3]" classname="JocTest" time="0.001"/>
-  <testcase name="testJugadaGuanyadora1{short, short}[4]" classname="JocTest" time="0"/>
+  <testcase name="testJugadaGuanyadora1{short, short}[3]" classname="JocTest" time="0"/>
+  <testcase name="testJugadaGuanyadora1{short, short}[4]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadora1{short, short}[5]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadora1{short, short}[6]" classname="JocTest" time="0"/>
   <testcase name="testJugadaGuanyadora1{short, short}[7]" classname="JocTest" time="0.001"/>
   <testcase name="testJugadaGuanyadora1{short, short}[8]" classname="JocTest" time="0"/>
   <testcase name="testJugadaGuanyadora1{short, short}[9]" classname="JocTest" time="0.001"/>
-  <testcase name="testTurnoJuagador" classname="JocTest" time="0.001"/>
+  <testcase name="testTurnoJuagador" classname="JocTest" time="0.002"/>
 </testsuite>
