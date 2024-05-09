@@ -9,11 +9,11 @@ public class Joc {
         return taulell;
     }
 
+    private short torn;
+
     public void setTorn(short torn) {
         this.torn = torn;
     }
-
-    private short torn;
 
     public short getTorn() {
         return torn;
