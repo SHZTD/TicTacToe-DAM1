@@ -9,6 +9,10 @@ public class Joc {
         return taulell;
     }
 
+    public void setTorn(short torn) {
+        this.torn = torn;
+    }
+
     private short torn;
 
     public short getTorn() {

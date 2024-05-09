@@ -1,4 +1,36 @@
 -------------------------------------------------------------------------------
 Test set: JocTest
 -------------------------------------------------------------------------------
-Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s - in JocTest
+Tests run: 30, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.152 s <<< FAILURE! - in JocTest
+testJugadaGuanyadoraJ1{short, short}[1]  Time elapsed: 0.03 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[2]  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[3]  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[4]  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[5]  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[6]  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[7]  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+
+testJugadaGuanyadoraJ1{short, short}[8]  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at JocTest.testJugadaGuanyadoraJ1(JocTest.java:153)
+

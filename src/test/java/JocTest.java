@@ -143,10 +143,26 @@ public class JocTest {
         Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
     }
 
+    //Test jugadaGuanyadora se comprobara la jugada ganadora del jugador1
+
+    @ParameterizedTest
+    @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
+    void testJugadaGuanyadoraJ1(short fila, short columna){
+        Joc joc = new Joc();
+        joc.novaPartida();
+        Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
+    }
+
     //Test metode jugadaGuanayadora jugador 2
 
-
-
+    @ParameterizedTest
+    @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
+    void testJugadaGuanyadoraJ2(short fila, short columna){
+        Joc joc = new Joc();
+        joc.novaPartida();
+        joc.setTorn((short)1);
+        Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
+    }
 
 
 }
