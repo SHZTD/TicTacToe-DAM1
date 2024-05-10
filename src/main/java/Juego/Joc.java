@@ -54,22 +54,23 @@ public class Joc {
     en acabar, el taulell i el torn no queden alterats.
      */
     public boolean jugadaGuanyadora(short fila, short columna) {
-
         int contador=0;
 
         for(int i=0; i < 3; i++){
-            if (getTaulell()[0][i]=='o') {
-                contador++;
+            if (getTaulell()[fila][i]=='o') {
+               contador++;
+               if (contador==3){
+                   return true;
+               }
+               else{
+                   return false;
+               }
             }
-        }
-        if (contador == 3){
-            return true;
         }
 
-        for (int i=0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-            }
-        }
+
+
         return false;
+
     }
 }
