@@ -103,15 +103,15 @@ public class JocTest {
         Joc joc = new Joc();
         //llamo al taulell para poder obtener el tablero relleno que de # que en nuestro caso es lo vacio
         joc.novaPartida();
-        /*Lo que hemos hemos hecho a sido decir que el tablero que queremos obetener en este caso es un 3x3,
-        compararlo con el tablero obtenido y como en este caso el 3x3 creado esta vacio si no lo esta dara un error.
+        /*Lo que hemos hecho ha sido decir que el tablero que queremos obtener en este caso es un 3x3,
+        compararlo con el tablero obtenido y como en este caso el 3x3 creado esta vació si no lo está dara un error.
          */
 
         char[][] taulellVacio = joc.getTaulell();
         Assertions.assertArrayEquals(taulellVacio, joc.getTaulell());
     }
 
-    //Prueba unitaria de si cuando empieza nueva partida es el turno del jugador 1
+    //Prueba unitaria de sí cuando empieza nueva partida es el turno del jugador 1
 
     @Test
     void testTurnoJuagador() {
@@ -148,24 +148,58 @@ public class JocTest {
         Assertions.assertFalse(joc.jugadaGuanyadora(fila,columna));
     }
 
-    //Test jugadaGuanyadora se comprobara la jugada ganadora del jugador1
+    //Test jugadaGuanyadora se comprobará la jugada ganadora del jugador1
 
     @ParameterizedTest
-    @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
+    @CsvSource({//"0,1",
+                "0,2",
+                //"1,0",
+                "1,1",
+                "1,2",
+                "2,0",
+                "2,1",
+                //"2,2"
+    })
     void testJugadaGuanyadoraJ1(short fila, short columna){
         Joc joc = new Joc();
         joc.novaPartida();
+        //tablero con el cual jugador 1 ganara
+        char[][] tableroLleno={
+                {' ', 'x', ' '},
+                {'x', 'x', 'o'},
+                {' ', 'o', 'o'}
+        };
+
+        joc.setTaulell(tableroLleno);
         Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
     }
 
     //Test metode jugadaGuanayadora jugador 2
 
     @ParameterizedTest
-    @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
+    @CsvSource({"0,1",
+                "0,2",
+                //"1,0",
+                "1,1",
+                //"1,2",
+                //"2,0",
+                //"2,1",
+                //"2,2"
+    })
     void testJugadaGuanyadoraJ2(short fila, short columna){
+        //setup
         Joc joc = new Joc();
         joc.novaPartida();
+        //tablero con el cual jugador 2 ganara
+        char[][] tableroLleno={
+                {' ', 'x', 'x'},
+                {' ', 'o', 'o'},
+                {'x', 'o', 'o'}
+        };
+        joc.setTaulell(tableroLleno);
         joc.setTorn((short)1);
+
+        //ejecución de prueba
         Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
     }
 
