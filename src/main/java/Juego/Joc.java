@@ -1,12 +1,5 @@
 package Juego;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
 
 public class Joc {
 
@@ -133,35 +126,5 @@ public class Joc {
 
         //Si da falso significa que el metodo no ha encontrado jugada ganadora
         return false;
-    }
-
-    private boolean crearCarperta() {
-        File file = new File("savedgames");
-        if (!file.exists()) {
-            file.mkdirs();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void guardarPartida() throws IOException, ParseException {
-        //SimpleDateFormat time = new SimpleDateFormat("yyyyMMddHHmmss");
-        // Si per alguna rao no existeix la carpeta
-        if (!crearCarperta()) {
-            crearCarperta();
-        } else {
-            Date date;
-            SimpleDateFormat time = new SimpleDateFormat("yyyyMMddhhmmss");
-            date = time.parse(String.valueOf(time.toString()));
-            String path = "savedgames/" + date;
-            File savedGame = new File(path);
-            FileWriter savedGameWrite = new FileWriter(path);
-
-
-            savedGameWrite.write();
-            savedGameWrite.close();
-        }
-
     }
 }
