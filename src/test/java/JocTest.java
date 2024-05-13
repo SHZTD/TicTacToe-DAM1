@@ -211,5 +211,28 @@ public class JocTest {
         Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
     }
 
+    //Test metodo empatar
+
+    @ParameterizedTest
+    @CsvSource({"0,1",
+            "0,2",
+            "1,0",
+            "1,1",
+            "1,2",
+            "2,0",
+            "2,1",
+            "2,2"})
+
+    void testEmpatar(short fila, short columna){
+        //setup
+        Joc joc = new Joc();
+        joc.novaPartida();
+        char [][] tableroLLeno={
+                {'o', 'x', 'x'},
+                {'x', 'o', 'o'},
+                {'x', 'o', 'o'}
+        };
+        //ejecuación de prueba
+    }
 
 }
