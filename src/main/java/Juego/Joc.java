@@ -3,8 +3,6 @@ package Juego;
 
 public class Joc {
 
-
-
     private char[][] taulell;
 
     public void setTaulell(char[][] taulell) {
@@ -125,6 +123,20 @@ public class Joc {
         }
 
         //Si da falso significa que el metodo no ha encontrado jugada ganadora
+        return false;
+    }
+
+    private boolean empate(short fila, short columna){
+        int contador=0;
+
+        if(getTaulell()[fila][columna]!='#'){
+            contador++;
+        }
+
+        if(contador==9){
+            return true;
+        }
+
         return false;
     }
 }

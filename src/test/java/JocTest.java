@@ -137,7 +137,15 @@ public class JocTest {
     //Test metode jugadaGuanyadora la cual mira si una casilla esta ocupada, es decir una unica casilla que la llamada de falsa
 
     @ParameterizedTest
-    @CsvSource({"0,1","0,2","1,0","1,1","1,2","2,0","2,1","2,2"})
+    @CsvSource({"0,1",
+                "0,2",
+                "1,0",
+                "1,1",
+                "1,2",
+                "2,0",
+                "2,1",
+                "2,2"
+    })
     void testJugadaGuanyadoraUnaCasella(short fila, short columna){
         //setup
         Joc joc = new Joc();
@@ -169,10 +177,10 @@ public class JocTest {
                 {'x', 'x', 'o'},
                 {' ', 'o', 'o'}
         };
-
         joc.setTaulell(tableroLleno);
         Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
     }
+
 
     //Test metode jugadaGuanayadora jugador 2
 
