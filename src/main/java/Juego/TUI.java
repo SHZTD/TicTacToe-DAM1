@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class TUI {
     private Scanner sc = new Scanner(System.in);
 
-    public int choice;
+    private int choice;
+
+    public int getChoice() {
+        return choice;
+    }
+
     public int mostrarMenu() {
         System.out.print(
                 """

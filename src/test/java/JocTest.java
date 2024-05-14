@@ -4,7 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class JocTest {
 
@@ -237,5 +240,42 @@ public class JocTest {
         //ejecuación de prueba
     }
 
+    @Test
+    void comprovarCarpetaOK() {
+        // instacia
+        Joc joc = new Joc();
+        joc.crearCarpeta("savedgames");
+        Assertions.assertTrue(true);
+    }
 
+    @Test
+    void comprovarCarpetaNOOK() {
+        // instacia
+        Joc joc = new Joc();
+        joc.crearCarpeta("yaint_a_folder_owo");
+        Assertions.assertFalse(false);
+    }
+
+    @Test
+    void comprovarUltimArxiu() throws IOException {
+        // instancia
+        Joc joc = new Joc();
+        // instancia una partida rapida
+        joc.novaPartida();
+        // crea un taulell completament buit
+
+        // lo que he pensado al principo random es hacer tambien la lammada ahí dentro
+        // pero como se tienen q llamar cosas al main, yo creo que metiendo un valor q se herede
+        // y hacer el if o switch dentro del main, pues ejecutar los metodos q querramos
+        // tipo
+
+        // guarda la partida
+        joc.guardarPartida();
+        File testFile = new File("savedgames");
+        if (Files.exists(Path.of("savedgames"))) {
+            Assertions.assertTrue(true);
+        } else {
+            Assertions.assertFalse(false);
+        }
+    }
 }
