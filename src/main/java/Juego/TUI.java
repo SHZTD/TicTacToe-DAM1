@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class TUI {
     private Scanner sc = new Scanner(System.in);
 
+    public int choice;
     public int mostrarMenu() {
         System.out.print(
                 """
@@ -20,11 +21,13 @@ public class TUI {
                         ║ 4. Sortir                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
-
-        return sc.nextInt();
+        choice = sc.nextInt();
+        return choice;
     }
 
-    public void configuracio() {
+
+    public void configuracio()
+    {
         System.out.print(
                 """
                         ╔══════════════════════════╗
@@ -32,26 +35,13 @@ public class TUI {
                         ║------------------------- ║
                         ║ 1. Configurar tamany     ║
                         ║------------------------- ║
-                        ║ 2. Tornar enrere         ║
+                        ║ 2. Enrere                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
-
-        switch (sc.nextInt()){
-            case 1:
-                configurarTamany();
-                break;
-            case 2:
-                System.out.println("Tornem al menú principal.");
-                break;
-        }
-    }
-
-    public int configurarTamany(){
-        return 1;
     }
 
     public void mostrarTaulell(char[][] taulell, short torn) {
-    return;
+        return;
     }
 
     public short[] recollirJugada() {

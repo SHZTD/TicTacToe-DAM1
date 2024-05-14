@@ -11,7 +11,7 @@ import java.util.Date;
 public class Joc {
 
 
-
+    public static final String SAVEDGAMES = "savedgames";
     private char[][] taulell;
 
     public void setTaulell(char[][] taulell) {
@@ -138,8 +138,8 @@ public class Joc {
     }
 
     // logica de guardar partida
-    public boolean crearCarpeta() {
-        File carpeta = new File("savedgames");
+    public boolean crearCarpeta(String path) {
+        File carpeta = new File(path);
         if (!carpeta.exists()) {
             carpeta.mkdirs();
         }
@@ -149,8 +149,8 @@ public class Joc {
 
     public void guardarPartida() throws IOException
     {
-        if (!crearCarpeta()) {
-            crearCarpeta();
+        if (!crearCarpeta(Joc.SAVEDGAMES)) {
+            crearCarpeta(Joc.SAVEDGAMES);
         }
         Date date = new Date();
         SimpleDateFormat dataGuardar = new SimpleDateFormat("yyyyMMddhhmmss");
