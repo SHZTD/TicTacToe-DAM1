@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.io.IOException;
+
 public class JocTest {
 
     // UNICAMENT PER 1 JUGADOR
@@ -146,7 +148,7 @@ public class JocTest {
                 "2,1",
                 "2,2"
     })
-    void testJugadaGuanyadoraUnaCasella(short fila, short columna){
+    void testJugadaGuanyadoraUnaCasella(short fila, short columna) throws IOException {
         //setup
         Joc joc = new Joc();
         joc.novaPartida();
@@ -234,5 +236,6 @@ public class JocTest {
         };
         //ejecuación de prueba
     }
+
 
 }
