@@ -264,11 +264,6 @@ public class JocTest {
         joc.novaPartida();
         // crea un taulell completament buit
 
-        // lo que he pensado al principo random es hacer tambien la lammada ahí dentro
-        // pero como se tienen q llamar cosas al main, yo creo que metiendo un valor q se herede
-        // y hacer el if o switch dentro del main, pues ejecutar los metodos q querramos
-        // tipo
-
         // guarda la partida
         joc.guardarPartida();
         File testFile = new File("savedgames");
