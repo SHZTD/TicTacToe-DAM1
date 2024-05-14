@@ -1,6 +1,13 @@
 package Juego;
 
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+
 public class Joc {
 
 
@@ -40,7 +47,10 @@ public class Joc {
     }
 
     // empezamos a escribir los chars en nuestro tablero
-    public void jugar(short fila, short columna) {
+    public void jugar(short fila, short columna) throws IOException {
+        if(fila == -1 && columna == -1) {
+            guardarPartida();
+        }
         switch (torn) {
             case 0:
                 taulell[fila][columna] = 'x';
@@ -51,7 +61,6 @@ public class Joc {
                 torn = 0;
                 break;
         }
-
     }
 
     /*
@@ -126,5 +135,30 @@ public class Joc {
 
         //Si da falso significa que el metodo no ha encontrado jugada ganadora
         return false;
+    }
+
+    // logica de guardar partida
+    public boolean crearCarpeta() {
+        File carpeta = new File("savedgames");
+        if (!carpeta.exists()) {
+            carpeta.mkdirs();
+        }
+        return false;
+    }
+
+
+    public void guardarPartida() throws IOException
+    {
+        if (!crearCarpeta()) {
+            crearCarpeta();
+        }
+        Date date = new Date();
+        SimpleDateFormat dataGuardar = new SimpleDateFormat("yyyyMMddhhmmss");
+        String path = "savedgames";
+        String nom = dataGuardar.format(date) + ".txt";
+        FileWriter archiu = new FileWriter(path + "/" + nom);
+        String metadata = getTorn() + "\n" + Arrays.deepToString(getTaulell());
+        archiu.write(metadata);
+        archiu.close();
     }
 }
