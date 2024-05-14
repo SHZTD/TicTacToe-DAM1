@@ -5,6 +5,5 @@ public class Main {
         TUI tui = new TUI();
         tui.mostrarMenu();
         Joc j = new Joc();
-
     }
 }
