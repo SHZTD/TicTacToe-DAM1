@@ -45,16 +45,8 @@ public class TUI {
                         Selecciona l'opció que vols: """);
     }
 
-    public void mostrarTaulell(char[][] taulell, short torn) {
-        return;
-    }
+    public void loadPartides() {
 
-    public short[] recollirJugada() {
-        return new short[1];
-    }
-
-    public void fiDePartida(short guanyador) {
-        return;
     }
 
 }

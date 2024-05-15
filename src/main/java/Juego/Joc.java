@@ -137,7 +137,8 @@ public class Joc {
         return false;
     }
 
-    // logica de guardar partida
+    // llogica de gestio de fitxers a FULL
+
     public boolean crearCarpeta(String path) {
         File carpeta = new File(path);
         if (!carpeta.exists()) {
@@ -146,12 +147,9 @@ public class Joc {
         return false;
     }
 
-
     public void guardarPartida() throws IOException
     {
-        if (!crearCarpeta(Joc.SAVEDGAMES)) {
-            crearCarpeta(Joc.SAVEDGAMES);
-        }
+        if (!crearCarpeta(Joc.SAVEDGAMES)) { crearCarpeta(Joc.SAVEDGAMES); }
         Date date = new Date();
         SimpleDateFormat dataGuardar = new SimpleDateFormat("yyyyMMddhhmmss");
         String path = "savedgames";
@@ -162,5 +160,20 @@ public class Joc {
         archiu.close();
     }
 
+    public File[] visualitzarPartides() {
+        if (crearCarpeta(Joc.SAVEDGAMES)) {
+            // instancia i llista si existeixen partides, sino res.
+            File partides = new File(Joc.SAVEDGAMES);
+            File[] arxius = partides.listFiles();
+            if (arxius.length != 0) {
+               return arxius;
+            }
+        }
 
+        return new File[0];
+    }
+
+    public int carregarPartida() {
+        return 0;
+    }
 }
