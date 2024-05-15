@@ -1,5 +1,6 @@
 package Juego;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class TUI {
@@ -25,7 +26,7 @@ public class TUI {
     }
 
 
-    public int configuracio()
+    public void configuracio()
     {
         System.out.print(
                 """
@@ -37,23 +38,25 @@ public class TUI {
                         ║ 2. Enrere                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
-        return sc.nextInt();
+        switch (sc.nextInt()){
+            case 1:
+                configurarTamany();
+                break;
+            case 2:
+                System.out.println("Tornem al menú principal");
+                break;
+        }
     }
 
     public int configurarTamany(){
         return 1;
     }
 
-    public void mostrarTaulell(char[][] taulell, short torn) {
-        return;
+    public void cargarPartides(File[] numPartides) {
+        System.out.println("Selecciona la partida que vols");
+        for (int i = 0; i < numPartides.length; i++) {
+            System.out.print("[ " + i + " ] " + numPartides[i].getName() + "\n");
+        }
+        int select = sc.nextInt();
     }
-
-    public short[] recollirJugada() {
-        return new short[1];
-    }
-
-    public void fiDePartida(short guanyador) {
-        return;
-    }
-
 }

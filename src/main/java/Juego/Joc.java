@@ -12,7 +12,6 @@ public class Joc {
 
 
     public static final String SAVEDGAMES = "savedgames";
-    public static final String Config = "config";
     private char[][] taulell;
 
     public void setTaulell(char[][] taulell) {
@@ -177,33 +176,5 @@ public class Joc {
     public int carregarPartida() {
         return 69;
     }
-
-    public int recogerConfiguracion(int opciones)  {
-       
-        switch (opciones){
-           case 1:
-               configurarTamany();
-               break;
-           case 2: 
-               break;
-       }
-       
-       return opciones;
-    }
-
-
-    public void configurarTamany() {
-
-
-        if(!crearCarpeta(Joc.Config)){
-            crearCarpeta(Joc.Config);
-        }
-        String path = "config";
-        String nom = "config.txt";
-        FileWriter archivo = new FileWriter(path + nom);
-        
-    }
-
-
 
 }
