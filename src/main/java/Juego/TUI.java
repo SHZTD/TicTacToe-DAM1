@@ -5,12 +5,6 @@ import java.util.Scanner;
 public class TUI {
     private Scanner sc = new Scanner(System.in);
 
-    private int choice;
-
-    public int getChoice() {
-        return choice;
-    }
-
     public int mostrarMenu() {
         System.out.print(
                 """
@@ -26,8 +20,8 @@ public class TUI {
                         ║ 4. Sortir                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
-        choice = sc.nextInt();
-        return choice;
+
+        return sc.nextInt();
     }
 
 
@@ -43,6 +37,18 @@ public class TUI {
                         ║ 2. Enrere                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
+        switch (sc.nextInt()){
+            case 1:
+                configurarTamany();
+                break;
+            case 2:
+                System.out.println("Tornem al menú principal");
+                break;
+        }
+    }
+
+    public int configurarTamany(){
+        return 1;
     }
 
     public void loadPartides() {
