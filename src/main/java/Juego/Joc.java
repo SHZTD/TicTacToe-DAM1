@@ -174,7 +174,7 @@ public class Joc {
     }
 
     public int carregarPartida() {
-        return 0;
+        return 69;
     }
 
 }
