@@ -25,7 +25,7 @@ public class TUI {
     }
 
 
-    public void configuracio()
+    public int configuracio()
     {
         System.out.print(
                 """
@@ -37,22 +37,23 @@ public class TUI {
                         ║ 2. Enrere                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
-        switch (sc.nextInt()){
-            case 1:
-                configurarTamany();
-                break;
-            case 2:
-                System.out.println("Tornem al menú principal");
-                break;
-        }
+        return sc.nextInt();
     }
 
     public int configurarTamany(){
         return 1;
     }
 
-    public void loadPartides() {
+    public void mostrarTaulell(char[][] taulell, short torn) {
+        return;
+    }
 
+    public short[] recollirJugada() {
+        return new short[1];
+    }
+
+    public void fiDePartida(short guanyador) {
+        return;
     }
 
 }
