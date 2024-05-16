@@ -201,7 +201,7 @@ public class Joc {
         String path = "config";
         String nom = "config.txt";
         FileWriter archivo = new FileWriter(path + nom);
-        
+        //tonto quien lo lea
     }
 
 
