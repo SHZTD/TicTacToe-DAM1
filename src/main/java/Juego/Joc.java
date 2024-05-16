@@ -178,7 +178,7 @@ public class Joc {
         return 69;
     }
 
-    public int recogerConfiguracion(int opciones)  {
+    public int recogerConfiguracion(int opciones) throws IOException {
        
         switch (opciones){
            case 1:
@@ -192,7 +192,7 @@ public class Joc {
     }
 
 
-    public void configurarTamany() {
+    public void configurarTamany() throws IOException {
 
 
         if(!crearCarpeta(Joc.Config)){
