@@ -1,6 +1,5 @@
 package Juego;
 
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -48,10 +47,7 @@ public class Joc {
     }
 
     // empezamos a escribir los chars en nuestro tablero
-    public void jugar(short fila, short columna) throws IOException {
-        if(fila == -1 && columna == -1) {
-            guardarPartida();
-        }
+    public void jugar(short fila, short columna){
         switch (torn) {
             case 0:
                 taulell[fila][columna] = 'x';
@@ -201,7 +197,7 @@ public class Joc {
         String path = "config";
         String nom = "config.txt";
         FileWriter archivo = new FileWriter(path + nom);
-        //hol
+
     }
 
 

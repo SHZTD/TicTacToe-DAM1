@@ -25,6 +25,25 @@ public class TUI {
         return sc.nextInt();
     }
 
+    public void mostrarTaullel(char [][] taulell, int torn){
+        for(int i=0; i < 3 ; i++){
+            for(int j=0; j < 3; j++){
+                System.out.print(taulell[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("Torn del jugador: "+ torn);
+    }
+
+    public int[] recollirJugada(){
+
+    }
+
+    public void fiDePartida(int guanyador){
+
+        if()
+    }
+
 
     public void configuracio()
     {
@@ -59,4 +78,6 @@ public class TUI {
         }
         int select = sc.nextInt();
     }
+
+
 }
