@@ -158,9 +158,9 @@ public class Joc {
     }
 
     public File[] visualitzarPartides() {
-        if (crearCarpeta(Joc.SAVEDGAMES)) {
+        File partides = new File(Joc.SAVEDGAMES);
+        if (partides.exists()) {
             // instancia i llista si existeixen partides, sino res.
-            File partides = new File(Joc.SAVEDGAMES);
             File[] arxius = partides.listFiles();
             if (arxius.length != 0) {
                return arxius;
@@ -199,7 +199,5 @@ public class Joc {
         FileWriter archivo = new FileWriter(path + nom);
 
     }
-
-
 
 }

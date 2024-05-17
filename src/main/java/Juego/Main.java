@@ -4,17 +4,18 @@ public class Main {
     public static void main(String[] args) {
         TUI tui = new TUI();
         Joc j = new Joc();
-
         while(true){
             switch (tui.mostrarMenu()) {
                 case 1:
                     novaPartida(j, tui);
                     break;
                 case 2:
+                    carregarPartida(j, tui);
                     break;
                 case 3:
                     break;
                 case 4:
+                    sortir();
                     break;
                 default:
                     break;
@@ -34,8 +35,8 @@ public class Main {
         }
     }
 
-    private static void carregarPartida() {
-
+    private static void carregarPartida(Joc j, TUI tui) {
+        tui.llistarPartides(j.visualitzarPartides());
     }
 
     private static void configuracio() {
