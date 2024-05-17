@@ -36,12 +36,11 @@ public class TUI {
     }
 
     public int[] recollirJugada(){
-
+        return new int[1];
     }
 
     public void fiDePartida(int guanyador){
-
-        if()
+        System.out.println("El guañador de la partida es: " + guanyador + "!");
     }
 
 
@@ -71,7 +70,7 @@ public class TUI {
         return 1;
     }
 
-    public void cargarPartides(File[] numPartides) {
+    public void llistarPartides(File[] numPartides) {
         System.out.println("Selecciona la partida que vols");
         for (int i = 0; i < numPartides.length; i++) {
             System.out.print("[ " + i + " ] " + numPartides[i].getName() + "\n");

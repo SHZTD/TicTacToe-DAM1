@@ -170,8 +170,8 @@ public class Joc {
         return new File[0];
     }
 
-    public int carregarPartida() {
-        return 69;
+    public void carregarPartida(int partida) {
+
     }
 
     public int recogerConfiguracion(int opciones) throws IOException {
