@@ -13,38 +13,48 @@ public class Main {
                     carregarPartida(j, tui);
                     break;
                 case 3:
+                    configuracio(j, tui);
                     break;
                 case 4:
                     sortir();
                     break;
                 default:
+                    System.out.println("Opció no valida, tria una opció del menú");
                     break;
 
             }
-            //tui.mostrarTaullel(j.getTaulell(), j.getTorn());
-            //tui.recollirJugada();
-            //tui.fiDePartida(j.getTorn());
-            //j.novaPartida();
         }
     }
 
     private static void novaPartida(Joc j, TUI tui){
         j.novaPartida();
-        while(true){
+        boolean partidaEnCurso= true;
+        while(partidaEnCurso){
             tui.mostrarTaullel(j.getTaulell(), j.getTorn());
+            int[] jugada = tui.recollirJugada();
+            j.jugar((short) jugada[0], (short) jugada[1]);
+
+            if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
+
+                tui.fiDePartida(j.getTorn());
+                partidaEnCurso=false;
+
+            }
         }
     }
 
     private static void carregarPartida(Joc j, TUI tui) {
+
         tui.llistarPartides(j.visualitzarPartides());
     }
 
-    private static void configuracio() {
+    private static void configuracio(Joc joc, TUI tui) {
+        tui.gestinarConfiguracio();
 
     }
 
     private static void sortir() {
-        System.exit(1);
+        System.exit(0);
     }
 
 }

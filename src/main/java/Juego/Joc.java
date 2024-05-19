@@ -15,6 +15,7 @@ public class Joc {
     private char[][] taulell;
 
     public void setTaulell(char[][] taulell) {
+
         this.taulell = taulell;
     }
 
@@ -96,7 +97,7 @@ public class Joc {
         }
 
         //Verificamos las diagonales del tablero
-
+        contador=0;
         for (int i = 0; i < 3; i++) {
             if (getTaulell()[i][i] == jugador) {
                 contador++;
@@ -116,7 +117,7 @@ public class Joc {
         Un ejemplo es, la posicion '0,2' la suma da 2, la posicion '1,1' la suma da 2 y asi con la última. Es por eso, por lo que
         está el condicional.
          */
-
+        contador=0;
         if (fila + columna == 2) {
 
             for (int i = 0; i < 3; i++) {
@@ -172,19 +173,6 @@ public class Joc {
 
     public void carregarPartida(int partida) {
 
-    }
-
-    public int recogerConfiguracion(int opciones) throws IOException {
-       
-        switch (opciones){
-           case 1:
-               configurarTamany();
-               break;
-           case 2: 
-               break;
-       }
-       
-       return opciones;
     }
 
 

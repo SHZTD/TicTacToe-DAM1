@@ -36,15 +36,23 @@ public class TUI {
     }
 
     public int[] recollirJugada(){
-        return new int[1];
+
+        System.out.println("Introdueix la fila: ");
+        int fila= sc.nextInt();
+
+        System.out.println("Introdueix la columna: ");
+        int columna= sc.nextInt();
+
+        return new int[]{fila, columna};
     }
 
     public void fiDePartida(int guanyador){
+
         System.out.println("El guañador de la partida es: " + guanyador + "!");
     }
 
 
-    public void configuracio()
+    public int mostrarConfiguracio()
     {
         System.out.print(
                 """
@@ -56,18 +64,35 @@ public class TUI {
                         ║ 2. Enrere                ║
                         ╚══════════════════════════╝
                         Selecciona l'opció que vols: """);
-        switch (sc.nextInt()){
-            case 1:
-                configurarTamany();
-                break;
-            case 2:
-                System.out.println("Tornem al menú principal");
-                break;
+        return sc.nextInt();
+    }
+
+    public void gestinarConfiguracio(){
+
+        while(true){
+            switch (mostrarConfiguracio()){
+                case 1:
+                    configurarTamany();
+                    break;
+                case 2:
+                    //El return es para volver al Menu Principal
+                    return;
+                default:
+                    break;
+            }
         }
     }
 
-    public int configurarTamany(){
-        return 1;
+    public int demanarTamany(){
+
+        System.out.println("Selecciona el tamany que vols del taullel: ");
+        return sc.nextInt();
+
+    }
+
+    public void configurarTamany(){
+     int midaTaulell = demanarTamany();
+
     }
 
     public void llistarPartides(File[] numPartides) {
