@@ -29,7 +29,7 @@ public class Main {
         }
     }
 
-    private static void novaPartida(Joc j, TUI tui) throws FileNotFoundException {
+    private static void novaPartida(Joc j, TUI tui) {
         j.novaPartida();
         boolean partidaEnCurso= true;
 
