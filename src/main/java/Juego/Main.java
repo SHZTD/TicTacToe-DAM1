@@ -38,6 +38,7 @@ public class Main {
             j.jugar((short) jugada[0], (short) jugada[1]);
 
             if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
+                tui.mostrarTaullel(j.getTaulell(), j.getTorn());
                 tui.fiDePartida(j.getTorn());
                 partidaEnCurso=false;
             }
