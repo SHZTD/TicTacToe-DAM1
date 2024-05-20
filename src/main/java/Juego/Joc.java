@@ -1,14 +1,15 @@
 package Juego;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Joc {
-
 
     public static final String SAVEDGAMES = "savedgames";
     public static final String Config = "config";
@@ -46,6 +47,7 @@ public class Joc {
         //Aqui lo que hacemos es poner el turno como 0 para que se reinicie al comenzar una partida
         torn = 0;
     }
+
 
     // empezamos a escribir los chars en nuestro tablero
     public void jugar(short fila, short columna){
@@ -165,6 +167,25 @@ public class Joc {
 
     public void carregarPartida(int partida) {
 
+    }
+
+    public int llegeixTamany() throws FileNotFoundException {
+        // busca el arxiu config
+        File tamany = new File("config.txt");
+        // llegeix el contingut del arxiu amb l'escaner
+        Scanner sc = new Scanner(tamany);
+        // variable on guardarem el valor del taulell
+        int j = 0;
+        // si el codi te una linia que es un numero (considerem que no sera string)
+        if (sc.hasNextLine()) {
+            j = sc.nextInt(); // guarda el int
+            sc.close();
+            return j;
+        } else {
+            j = 3; // significa que no hi ha res o no es un numero
+            sc.close();
+            return j;
+        }
     }
 
 }

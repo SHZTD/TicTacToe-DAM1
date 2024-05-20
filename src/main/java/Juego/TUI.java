@@ -1,6 +1,5 @@
 package Juego;
 
-import javax.imageio.IIOException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -105,7 +104,7 @@ public class TUI {
         int midaTaulell = demanarTamany();
         if(midaTaulell >=3 && midaTaulell <=10){
             try{
-                FileWriter tamany = new FileWriter("config");
+                FileWriter tamany = new FileWriter("config.txt");
                 tamany.write(Integer.toString(midaTaulell));
                 tamany.close();
             }
@@ -116,7 +115,6 @@ public class TUI {
         else {
             System.out.println("La mida del taulell ha de ser entre 3 i 10");
         }
-
     }
 
     public void llistarPartides(File[] numPartides) {

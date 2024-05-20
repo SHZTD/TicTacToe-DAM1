@@ -1,7 +1,10 @@
 package Juego;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         TUI tui = new TUI();
         Joc j = new Joc();
         while(true){
@@ -26,7 +29,7 @@ public class Main {
         }
     }
 
-    private static void novaPartida(Joc j, TUI tui){
+    private static void novaPartida(Joc j, TUI tui) throws FileNotFoundException {
         j.novaPartida();
         boolean partidaEnCurso= true;
 
@@ -52,7 +55,6 @@ public class Main {
 
     private static void configuracio(Joc j, TUI tui) {
         tui.gestinarConfiguracio();
-
     }
 
     private static void sortir() {
