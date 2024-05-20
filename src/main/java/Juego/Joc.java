@@ -108,15 +108,7 @@ public class Joc {
             return true;
         }
 
-        //Esta suma la hacemos para comprobar la diagonal de derecha a izquierda desde arriba
 
-        /*
-        El condicional está creado para verificar si nos encontramos dentro de esta diagonal, y va de la siguiente manera:
-
-        Para entenderlo hay que ver que cuando vemos esta diagonal hay que ver que las posicion de estas diagonales da un total 2.
-        Un ejemplo es, la posicion '0,2' la suma da 2, la posicion '1,1' la suma da 2 y asi con la última. Es por eso, por lo que
-        está el condicional.
-         */
         contador=0;
         if (fila + columna == 2) {
 
@@ -135,7 +127,7 @@ public class Joc {
         return false;
     }
 
-    // llogica de gestio de fitxers a FULL
+    // logica de gestio de fitxers a FULL
 
     public boolean crearCarpeta(String path) {
         File carpeta = new File(path);
@@ -172,19 +164,6 @@ public class Joc {
     }
 
     public void carregarPartida(int partida) {
-
-    }
-
-
-    public void configurarTamany() throws IOException {
-
-
-        if(!crearCarpeta(Joc.Config)){
-            crearCarpeta(Joc.Config);
-        }
-        String path = "config";
-        String nom = "config.txt";
-        FileWriter archivo = new FileWriter(path + nom);
 
     }
 

@@ -29,13 +29,14 @@ public class Main {
     private static void novaPartida(Joc j, TUI tui){
         j.novaPartida();
         boolean partidaEnCurso= true;
+
         while(partidaEnCurso){
+
             tui.mostrarTaullel(j.getTaulell(), j.getTorn());
             int[] jugada = tui.recollirJugada();
             j.jugar((short) jugada[0], (short) jugada[1]);
 
             if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
-
                 tui.fiDePartida(j.getTorn());
                 partidaEnCurso=false;
 
@@ -46,9 +47,10 @@ public class Main {
     private static void carregarPartida(Joc j, TUI tui) {
 
         tui.llistarPartides(j.visualitzarPartides());
+
     }
 
-    private static void configuracio(Joc joc, TUI tui) {
+    private static void configuracio(Joc j, TUI tui) {
         tui.gestinarConfiguracio();
 
     }

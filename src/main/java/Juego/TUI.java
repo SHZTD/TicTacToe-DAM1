@@ -1,6 +1,9 @@
 package Juego;
 
+import javax.imageio.IIOException;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TUI {
@@ -28,11 +31,19 @@ public class TUI {
     public void mostrarTaullel(char [][] taulell, int torn){
         for(int i=0; i < 3 ; i++){
             for(int j=0; j < 3; j++){
-                System.out.print(taulell[i][j]);
+                System.out.print(taulell[i][j]+ " ");
             }
             System.out.println();
         }
-        System.out.println("Torn del jugador: "+ torn);
+
+        String jugador;
+        if (torn == 0){
+            jugador = "x";
+        }else {
+            jugador = "o";
+        }
+
+        System.out.println("Torn del jugador: "+ jugador );
     }
 
     public int[] recollirJugada(){
@@ -48,7 +59,7 @@ public class TUI {
 
     public void fiDePartida(int guanyador){
 
-        System.out.println("El guañador de la partida es: " + guanyador + "!");
+        System.out.println("El guanyador de la partida es: " + (guanyador == 0 ? "o" : "x") + "!");
     }
 
 
@@ -85,13 +96,26 @@ public class TUI {
 
     public int demanarTamany(){
 
-        System.out.println("Selecciona el tamany que vols del taullel: ");
+        System.out.println("Selecciona el tamany que vols del taullel. Recorda que ha de ser entre 3 i 10 : ");
         return sc.nextInt();
 
     }
 
     public void configurarTamany(){
-     int midaTaulell = demanarTamany();
+        int midaTaulell = demanarTamany();
+        if(midaTaulell >=3 && midaTaulell <=10){
+            try{
+                FileWriter tamany = new FileWriter("config");
+                tamany.write(Integer.toString(midaTaulell));
+                tamany.close();
+            }
+            catch (IOException e) {
+                System.out.println("Error en la configuració de la mida ");
+            }
+        }
+        else {
+            System.out.println("La mida del taulell ha de ser entre 3 i 10");
+        }
 
     }
 
