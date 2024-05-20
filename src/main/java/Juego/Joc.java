@@ -87,7 +87,7 @@ public class Joc {
         }
 
         //Aqui verificamos si hay las posiciones de forma horizontal es decir las filas para ver si hay una jugada ganadora
-
+        contador = 0;
         for (int i = 0; i < 3; i++) {
             if (getTaulell()[i][columna] == jugador) {
                 contador++;
@@ -99,10 +99,12 @@ public class Joc {
         }
 
         //Verificamos las diagonales del tablero
-        contador=0;
-        for (int i = 0; i < 3; i++) {
-            if (getTaulell()[i][i] == jugador) {
-                contador++;
+        if( fila == columna) {
+            contador = 0;
+            for (int i = 0; i < 3; i++) {
+                if (getTaulell()[i][i] == jugador) {
+                    contador++;
+                }
             }
         }
 

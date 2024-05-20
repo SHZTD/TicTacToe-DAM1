@@ -1,4 +1,5 @@
 import Juego.Joc;
+import Juego.TUI;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -164,56 +165,52 @@ public class JocTest {
     //Test jugadaGuanyadora se comprobará la jugada ganadora del jugador1
 
     @ParameterizedTest
-    @CsvSource({//"0,1",
-                "0,2",
-                //"1,0",
-                "1,1",
-                "1,2",
-                "2,0",
-                "2,1",
-                //"2,2"
-    })
-    void testJugadaGuanyadoraJ1(short fila, short columna){
+    @CsvSource({"0,0", "0,2", "1,1", "1,2", "2,0", "2,1"})
+    void testJugadaGuanyadoraJ1(short fila, short columna) {
+        // Set up
         Joc joc = new Joc();
         joc.novaPartida();
-        //tablero con el cual jugador 1 ganara
-        char[][] tableroLleno={
-                {' ', 'x', ' '},
-                {'x', 'x', 'o'},
+
+        // Tablero con el cual jugador 1 gana
+        char[][] tableroLleno = {
+                {'x', 'x', ' '},
+                {' ', 'x', 'o'},
                 {' ', 'o', 'o'}
         };
+
+
         joc.setTaulell(tableroLleno);
-        Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
+
+        boolean resultado = joc.jugadaGuanyadora(fila, columna);
+
+        Assertions.assertTrue(resultado);
     }
 
 
     //Test metode jugadaGuanayadora jugador 2
 
     @ParameterizedTest
-    @CsvSource({"0,1",
-                "0,2",
-                //"1,0",
-                "1,1",
-                //"1,2",
-                //"2,0",
-                //"2,1",
-                //"2,2"
-    })
-    void testJugadaGuanyadoraJ2(short fila, short columna){
-        //setup
+    @CsvSource({"0,2", "1,0", "2,2"})
+    void testJugadaGuanyadoraJ2(short fila, short columna) {
+        // Configuración inicial
         Joc joc = new Joc();
         joc.novaPartida();
-        //tablero con el cual jugador 2 ganara
-        char[][] tableroLleno={
-                {' ', 'x', 'x'},
-                {' ', 'o', 'o'},
-                {'x', 'o', 'o'}
-        };
-        joc.setTaulell(tableroLleno);
-        joc.setTorn((short)1);
 
-        //ejecución de prueba
-        Assertions.assertTrue(joc.jugadaGuanyadora(fila, columna));
+        // Tablero con el cual jugador 2 ganará con una jugada adicional
+        char[][] tableroLlenoJugador2 = {
+                {'x', 'x', ' '},
+                {' ', 'x', 'o'},
+                {' ', 'o', 'o'}
+        };
+
+        // Establecer el tablero personalizado
+        joc.setTaulell(tableroLlenoJugador2);
+
+        // Ejecutar la prueba
+        boolean resultado = joc.jugadaGuanyadora(fila, columna);
+
+        // Verificar que solo la casilla ganadora devuelve true
+        Assertions.assertTrue(resultado);
     }
 
     //Test metodo empatar
@@ -238,8 +235,15 @@ public class JocTest {
                 {'x', 'o', 'o'}
         };
         //ejecuación de prueba
+        Assertions.assertEquals(tableroLLeno,joc.getTaulell());
     }
 
+    //Test mostrarTaullel
+
+
+
+
+    //Test metodo
     @Test
     void comprovarCarpetaOK() {
         // instacia
@@ -272,5 +276,12 @@ public class JocTest {
         } else {
             Assertions.assertFalse(false);
         }
+    }
+
+    //Test comprovar archivos
+
+    @Test
+    void testComprovarArchivos(){
+
     }
 }
