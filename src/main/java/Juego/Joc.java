@@ -16,7 +16,6 @@ public class Joc {
     private char[][] taulell;
 
     public void setTaulell(char[][] taulell) {
-
         this.taulell = taulell;
     }
 
@@ -50,15 +49,32 @@ public class Joc {
 
 
     // empezamos a escribir los chars en nuestro tablero
-    public void jugar(short fila, short columna){
+    public void jugar(short fila, short columna) throws IOException {
+        if (fila == -1 && columna == -1) {
+            guardarPartida();
+            return;
+        }
+
         switch (torn) {
             case 0:
-                taulell[fila][columna] = 'x';
-                torn = 1;
-                break;
+                if (taulell[fila][columna] == 'o') {
+                    torn = 0;
+                    break;
+                } else {
+                    taulell[fila][columna] = 'x';
+                    torn = 1;
+                    break;
+                }
             case 1:
-                taulell[fila][columna] = 'o';
-                torn = 0;
+                if (taulell[fila][columna] == 'x') {
+                    torn = 1;
+                    break;
+                } else {
+                    taulell[fila][columna] = 'o';
+                    torn = 0;
+                    break;
+                }
+            default:
                 break;
         }
     }

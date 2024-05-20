@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         TUI tui = new TUI();
         Joc j = new Joc();
-        //j.carregarPartida("20240520115031.txt");
         while(true){
             switch (tui.mostrarMenu()) {
                 case 1:
@@ -28,7 +27,7 @@ public class Main {
         }
     }
 
-    private static void novaPartida(Joc j, TUI tui) {
+    private static void novaPartida(Joc j, TUI tui) throws IOException {
         j.novaPartida();
         boolean partidaEnCurso= true;
 
@@ -39,7 +38,6 @@ public class Main {
             j.jugar((short) jugada[0], (short) jugada[1]);
 
             if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
-                tui.mostrarTaullel(j.getTaulell(), j.getTorn());
                 tui.fiDePartida(j.getTorn());
                 partidaEnCurso=false;
             }
