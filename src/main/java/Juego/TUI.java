@@ -147,6 +147,4 @@ public class TUI {
         }
         int select = sc.nextInt();
     }
-
-
 }

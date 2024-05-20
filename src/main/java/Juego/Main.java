@@ -1,12 +1,12 @@
 package Juego;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         TUI tui = new TUI();
         Joc j = new Joc();
+        j.carregarPartida("20240520115031.txt");
         while(true){
             switch (tui.mostrarMenu()) {
                 case 1:
@@ -24,7 +24,6 @@ public class Main {
                 default:
                     System.out.println("Opció no valida, tria una opció del menú");
                     break;
-
             }
         }
     }
@@ -42,15 +41,12 @@ public class Main {
             if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
                 tui.fiDePartida(j.getTorn());
                 partidaEnCurso=false;
-
             }
         }
     }
 
     private static void carregarPartida(Joc j, TUI tui) {
-
         tui.llistarPartides(j.visualitzarPartides());
-
     }
 
     private static void configuracio(Joc j, TUI tui) {

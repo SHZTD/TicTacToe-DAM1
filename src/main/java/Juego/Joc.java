@@ -167,8 +167,39 @@ public class Joc {
         return new File[0];
     }
 
-    public void carregarPartida(int partida) {
+    // aquest metode no esta adaptat per proba de tontos de moment...
+    public void carregarPartida(String game) throws FileNotFoundException {
+        File gameFile = new File(SAVEDGAMES + "/" + game);
+        Scanner data = new Scanner(gameFile);
+        // primera linea, posa el torn degudament:
+        // obte la primera linea (torn)
+        if (data.hasNextLine()) {
+            String torn = data.nextLine();
+            short newTorn = Short.parseShort(torn);
+            setTorn(newTorn);
+        }
 
+        // segona linea ara:
+        if (data.hasNextLine()) {
+            String joc = data.nextLine();
+            // 300 iq move, remplaça les ocurrences
+            char[] newJoc = joc.replace("[", "")
+                    .replace("]", "")
+                    .replace(",", "")
+                    .replace(" ", "").toCharArray();
+            // tenim un array 1d a 2d... sabem que es cuadrat...
+            // per tant n*n = n^2 -> per saber quantes files/columnes -> arrel
+            // 3x3 = 9 -> sqrt(9) = 3 files, 3 columnes
+            short costats = (short)Math.sqrt((short)newJoc.length); // sempre sera short
+            char[][] nowTaulell = new char[costats][costats];
+            // omple la nova matriu
+            for (int i = 0; i < costats; i++) {
+                for (int j = 0; i < costats; i++) {
+                    nowTaulell[i][j] = newJoc[i + costats + j];
+                }
+            }
+            setTaulell(nowTaulell);
+        }
     }
 
     public int llegeixTamany() throws FileNotFoundException {
@@ -189,5 +220,4 @@ public class Joc {
             return j;
         }
     }
-
 }
