@@ -1,5 +1,6 @@
 package Juego;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main {
@@ -29,24 +30,13 @@ public class Main {
 
     private static void novaPartida(Joc j, TUI tui) throws IOException {
         j.novaPartida();
-        boolean partidaEnCurso= true;
-
-        while(partidaEnCurso){
-
-            tui.mostrarTaullel(j.getTaulell(), j.getTorn());
-            int[] jugada = tui.recollirJugada();
-            j.jugar((short) jugada[0], (short) jugada[1]);
-
-            if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
-                tui.mostrarTaullel(j.getTaulell(), j.getTorn());
-                tui.fiDePartida(j.getTorn());
-                partidaEnCurso=false;
-            }
-        }
+        initPartida(j, tui);
     }
 
-    private static void carregarPartida(Joc j, TUI tui) {
+    private static void carregarPartida(Joc j, TUI tui) throws IOException {
         tui.llistarPartides(j.visualitzarPartides());
+        j.selectPartida(tui.game); // ????? (dubte a resoldre)
+        initPartida(j, tui);
     }
 
     private static void configuracio(Joc j, TUI tui) {
@@ -57,4 +47,25 @@ public class Main {
         System.exit(0);
     }
 
+    // extraccio de metode
+    private static void initPartida(Joc j, TUI tui) throws IOException {
+        boolean partidaEnCurso= true;
+
+        while(partidaEnCurso){
+            tui.mostrarTaullel(j.getTaulell(), j.getTorn());
+            int[] jugada = tui.recollirJugada();
+            j.jugar((short) jugada[0], (short) jugada[1]);
+
+            if (j.jugadaGuanyadora((short) jugada[0], (short) jugada[1])){
+                tui.mostrarTaullel(j.getTaulell(), j.getTorn());
+                tui.fiDePartida(j.getTorn());
+                partidaEnCurso=false;
+            }
+
+            if (jugada[0] == -1 && jugada[1] == -1) {
+                partidaEnCurso = false;
+                tui.partidaGuardada();
+            }
+        }
+    }
 }

@@ -90,6 +90,10 @@ public class Joc {
         char jugador = (torn == 0) ? 'o' : 'x';
         int contador = 0;
 
+        // cas si guarda
+        if (fila == -1 && columna == -1) {
+            return false;
+        }
         //Aqui verificamos si hay las posiciones de forma vertical es decir las filas para ver si hay una jugada ganadora
 
         for (int i = 0; i < 3; i++) {
@@ -184,7 +188,7 @@ public class Joc {
     }
 
     // aquest metode no esta adaptat per proba de tontos de moment...
-    public void carregarPartida(String game) throws FileNotFoundException {
+    public void selectPartida(String game) throws FileNotFoundException {
         File gameFile = new File(SAVEDGAMES + "/" + game);
         Scanner data = new Scanner(gameFile);
         // primera linea, posa el torn degudament:
@@ -210,10 +214,12 @@ public class Joc {
             char[][] nowTaulell = new char[costats][costats];
             // omple la nova matriu
             for (int i = 0; i < costats; i++) {
-                for (int j = 0; i < costats; i++) {
-                    nowTaulell[i][j] = newJoc[i + costats + j];
+                for (int j = 0; j < costats; j++) {
+                    // buffer[][] = buffer[a + WIDTH * y]
+                    nowTaulell[i][j] = newJoc[j + costats * i];
                 }
             }
+            // guarda el nou taulell
             setTaulell(nowTaulell);
         }
     }

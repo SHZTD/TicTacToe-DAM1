@@ -22,7 +22,7 @@ public class TUI {
                         ║------------------------- ║
                         ║ 4. Sortir                ║
                         ╚══════════════════════════╝
-                        Selecciona l'opció que vols: """);
+                        Selecciona l'opció que vols:  """);
 
         return sc.nextInt();
     }
@@ -140,11 +140,22 @@ public class TUI {
         }
     }
 
+    public String game;
+
     public void llistarPartides(File[] numPartides) {
         System.out.println("Selecciona la partida que vols");
+        if (numPartides.length == 0) {
+            System.out.println("No hi han partides disponibles. Juga i guarda algunes.");
+            return;
+        }
         for (int i = 0; i < numPartides.length; i++) {
-            System.out.print("[ " + i + " ] " + numPartides[i].getName() + "\n");
+                System.out.print("[ " + i + " ] " + numPartides[i].getName() + "\n");
         }
         int select = sc.nextInt();
+        game = numPartides[select].getName();
+    }
+
+    public void partidaGuardada() {
+        System.out.println("Partida guardada correctament!");
     }
 }
